@@ -1,4 +1,4 @@
-<img width="762" alt="image" src="https://user-images.githubusercontent.com/16719720/222925495-e802ec68-54d5-48d7-8e31-0562d221a506.png">
+<img width="762" alt="image" src="https://user-images.githubusercontent.com/16719720/222925676-227fd7a3-da34-4dd8-be34-7e5664a4e56b.png">
 
 # subtitle-translator
 Translate subtitle using ChatGPT
