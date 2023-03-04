@@ -57,7 +57,7 @@ for (let subtitleFile of subtitles) {
     // console.log(`${subtitle[i].data.text}`.blue)
     subtitle[i].data.text = `${result}\n${text}`
     console.log(`-----------------`.gray)
-    console.log(`${i} / ${subtitle.length}`.gray)
+    console.log(`${i + 1} / ${subtitle.length}`.gray)
     console.log(`${result}`.green)
     console.log(`${text}`.white)
   }
