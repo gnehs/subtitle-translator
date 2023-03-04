@@ -10,8 +10,9 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 let subtitles = fs.readdirSync('./src')
+let supportExtensions = ['srt', 'vtt']
 for (let subtitleFile of subtitles) {
-  if (!subtitleFile.endsWith('.srt')) continue
+  if (!supportExtensions.includes(subtitleFile.split('.').pop())) continue
   let subtitle = fs.readFileSync(`./src/${subtitleFile}`, 'utf8')
   subtitle = parseSync(subtitle)
   subtitle = subtitle.filter(line => line.type === 'cue')
