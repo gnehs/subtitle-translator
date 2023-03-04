@@ -1,7 +1,7 @@
 <img width="762" alt="image" src="https://user-images.githubusercontent.com/16719720/222925495-e802ec68-54d5-48d7-8e31-0562d221a506.png">
 
 # subtitle-translator
-Subtitle translator based on ChatGPT
+Translate subtitle using ChatGPT
 
 ## How to use
 - Get your own API key from [here](https://platform.openai.com/account/api-keys)
