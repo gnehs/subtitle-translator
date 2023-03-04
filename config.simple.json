@@ -1,0 +1,4 @@
+{
+  "OPENAI_API_KEY": "<Paste your OpenAI API key here>",
+  "TARGET_LANGUAGE": "<Any language supported by ChatGPT>"
+}

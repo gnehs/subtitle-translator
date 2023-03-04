@@ -1,0 +1,25 @@
+{
+  "name": "subtitle-translator",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Translate subtitle using ChatGPT",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gnehs/subtitle-translator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gnehs/subtitle-translator/issues"
+  },
+  "homepage": "https://github.com/gnehs/subtitle-translator#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "openai": "^3.2.1",
+    "subtitle": "^4.2.1"
+  }
+}
