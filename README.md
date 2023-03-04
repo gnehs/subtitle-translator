@@ -2,7 +2,10 @@
 
 # subtitle-translator
 Translate subtitle using ChatGPT
-
+## Features
+- Translate subtitle using ChatGPT `gpt-3.5-turbo`
+- Support multiple languages
+- Translation according to the preceding and following sentences
 ## How to use
 - Get your own API key from [here](https://platform.openai.com/account/api-keys)
 - Rename `config.example.json` to `config.json` and fill in your API key and target language.
