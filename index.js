@@ -46,8 +46,10 @@ for (let subtitleFile of subtitles) {
       try {
         result = result.match(/"Input":"(.*?)"/)[1]
       } catch (e) {
-        console.log('ERROR'.red)
-        console.log(e)
+        console.log('###'.red)
+        console.log(e.toString().red)
+        console.log(result.red)
+        console.log('###'.red)
       }
     }
     previousSubtitles.push({ role: "user", content: JSON.stringify(input) })
