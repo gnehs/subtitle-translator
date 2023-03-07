@@ -7,12 +7,15 @@ Translate subtitle using ChatGPT
 - Support multiple languages
 - Translation according to the preceding and following sentences
 ## How to use
-- Get your own API key from [here](https://platform.openai.com/account/api-keys)
-- Rename `config.example.json` to `config.json` and fill in your API key and target language.
-- Put your subtitle file in `src` folder
-- Run `npm install` to install dependencies
-- Run `node index.js` to start
-- After the translation is done, you can find the translated file in `res` folder
+- Electron
+  - You can download the electron app from [here](https://github.com/gnehs/subtitle-translator-electron/releases)
+- Node.js
+  - Get your own API key from [here](https://platform.openai.com/account/api-keys)
+  - Rename `config.example.json` to `config.json` and fill in your API key and target language.
+  - Put your subtitle file in `src` folder
+  - Run `npm install` to install dependencies
+  - Run `node index.js` to start
+  - After the translation is done, you can find the translated file in `res` folder
 
 ## Supported subtitle extensions
 - `.srt`
