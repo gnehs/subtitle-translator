@@ -26,20 +26,29 @@ for (let subtitleFile of subtitles) {
     if (subtitle[i + 1]) {
       input.Next = subtitle[i + 1].data.text
     }
-    const completion = await openai.createChatCompletion({
-      model: "gpt-3.5-turbo",
-      messages: [
-        {
-          role: "system",
-          content: `You are a program responsible for translating subtitles. Your task is to output the specified target language based on the input text. Please do not create the following subtitles on your own. Please do not output any text other than the translation. You will receive the subtitles as array that needs to be translated, as well as the previous translation results and next subtitle. If you need to merge the subtitles with the following line, simply repeat the translation. Please transliterate the person's name into the local language. Target language: ${config.TARGET_LANGUAGE}`
-        },
-        ...previousSubtitles.slice(-4),
-        {
-          role: "user",
-          content: JSON.stringify(input)
-        }
-      ],
-    });
+    let completion;
+    for (;;) {
+      try {
+        completion = await openai.createChatCompletion({
+          model: "gpt-3.5-turbo",
+          messages: [
+            {
+              role: "system",
+              content: `You are a program responsible for translating subtitles. Your task is to output the specified target language based on the input text. Please do not create the following subtitles on your own. Please do not output any text other than the translation. You will receive the subtitles as array that needs to be translated, as well as the previous translation results and next subtitle. If you need to merge the subtitles with the following line, simply repeat the translation. Please transliterate the person's name into the local language. Target language: ${config.TARGET_LANGUAGE}`
+            },
+            ...previousSubtitles.slice(-4),
+            {
+              role: "user",
+              content: JSON.stringify(input)
+            }
+          ],
+        }, {timeout: 60 * 1000 });
+        break;
+      } catch (e) {
+        console.error(`Error:    ${e}`);
+        console.log('retrying...'.red);
+      }
+    }
     let result = completion.data.choices[0].message.content
     try {
       result = JSON.parse(result).Input
